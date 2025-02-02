@@ -1,5 +1,4 @@
 import { captureScreen, captureViewport } from "../utils/utils";
-import { Button } from "./ui/Button";
 import { Header } from "./ui/Header";
 
 const CONTENT = {
