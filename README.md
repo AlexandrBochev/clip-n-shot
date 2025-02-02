@@ -1,4 +1,4 @@
-# clip-n-shot
+# ClipNShot
 
-Run: npm i
-Run: npm run dev
+# Run: npm i
+# Run: npm run dev
