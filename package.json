@@ -1,0 +1,39 @@
+{
+  "name": "clip-n-shot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "clean": "rm -rf dist",
+    "dev": "npm run clean && webpack --mode development --watch"
+  },
+  "keywords": [],
+  "author": "Alexandr Bochev",
+  "license": "ISC",
+  "description": "Alexandr Bochev | Chrome Screenshot Extension",
+  "dependencies": {
+    "cropperjs": "^1.6.2",
+    "image-capture": "^0.4.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.1",
+    "@types/chrome": "^0.0.300",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@types/w3c-image-capture": "^1.0.10",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "postcss": "^8.5.1",
+    "postcss-loader": "^8.1.1",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^4.0.1",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  }
+}
