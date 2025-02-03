@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Header } from "./ui/Header";
-import { Reset, RotateLeft, RotateRight, ZoomIn, ZoomOut } from "./icons/icons";
-import { ButtonProps } from "./ui/Button";
-import { useCropper, useScreenshot } from "../hooks/hooks";
+import { useRef } from "react"
+import { Header } from "./ui/Header"
+import { Reset, RotateLeft, RotateRight, ZoomIn, ZoomOut } from "./icons/icons"
+import { ButtonProps } from "./ui/Button"
+import { useCropper, useScreenshot } from "../hooks/hooks"
 
 const Editor = () => {
-  const imageRef = useRef<HTMLImageElement>(null!);
-  const [screenshot] = useScreenshot();
+  const imageRef = useRef<HTMLImageElement>(null!)
+  const [screenshot] = useScreenshot()
   const {
     initializeCropper,
     zoomIn,
@@ -14,46 +14,46 @@ const Editor = () => {
     rotateLeft,
     rotateRight,
     reset,
-    handleDownload
-  } = useCropper(imageRef);
+    handleDownload,
+  } = useCropper(imageRef)
 
   const CONTENT = {
-    logoUrl: 'icons/icon16.png',
-    title: 'ClipNShot | Editor',
-    buttons: [
+    logoUrl: "icons/icon16.png",
+    title: "ClipNShot | Editor",
+    actions: [
       {
-        key: 'zoom-in',
+        key: "zoom-in",
         icon: <ZoomIn />,
         noClick: zoomIn,
         variant: "ghost",
       },
       {
-        key: 'zoom-out',
+        key: "zoom-out",
         icon: <ZoomOut />,
         noClick: zoomOut,
         variant: "ghost",
       },
       {
-        key: 'rotate-left',
+        key: "rotate-left",
         icon: <RotateLeft />,
         noClick: rotateLeft,
         variant: "ghost",
       },
       {
-        key: 'rotate-right',
+        key: "rotate-right",
         icon: <RotateRight />,
         noClick: rotateRight,
         variant: "ghost",
       },
       {
-        key: 'reset',
+        key: "reset",
         icon: <Reset />,
         noClick: reset,
         variant: "ghost",
       },
       {
-        key: 'download',
-        title: 'Download',
+        key: "download",
+        title: "Download",
         noClick: handleDownload,
       },
     ] as ButtonProps[],
@@ -61,18 +61,18 @@ const Editor = () => {
 
   return (
     <div className="container mx-auto p-5 flex flex-col items-center gap-4">
-      <Header title={CONTENT.title} logoUrl={CONTENT.logoUrl} buttons={CONTENT.buttons} />
-      {screenshot && (
-          <img
-            ref={imageRef}
-            src={screenshot}
-            alt="Screenshot"
-            onLoad={initializeCropper}
-            className="max-h-[64vh] object-cover"
-          />
-        )}
+      <Header {...CONTENT} />
+      {screenshot &&
+        <img
+          ref={imageRef}
+          src={screenshot}
+          alt="Screenshot"
+          onLoad={initializeCropper}
+          className="max-h-[64vh] object-cover"
+        />
+      }
     </div>
-  );
-};
+  )
+}
 
 export { Editor }

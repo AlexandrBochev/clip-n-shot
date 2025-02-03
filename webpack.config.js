@@ -18,6 +18,10 @@ module.exports = {
       "@": path.resolve(__dirname, "src"),
     },
   },
+  mode: "production",
+  optimization: {
+    minimize: true,
+  },
   module: {
     rules: [
       {
